@@ -192,5 +192,140 @@ Integer is a class in java.lang and it represents an object that holds a single 
       
   Here WebDriver is the interface , driver is the variable, new ChromeDriver() is creating an instance of the chrome browser and assigning it to the driver variable.
 
+## Create an object of the Employee class
+
+Check the ID of the employee and update the name of the employee here. 
+```
+class Employee {
+    private int id;
+    private String name;
+    private int age;
+    private String[] skills;
+
+    // Constructor
+    public Employee(int id, String name, int age, String[] skills) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.skills = skills;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{id=" + id + ", name='" + name + "', age=" + age + ", skills=" + String.join(", ", skills) + "}";
+    }
+}
+
+public class UpdateEmployee {
+    public static void main(String[] args) {
+        // Create an Employee object
+        Employee employee = new Employee(2, "Bob", 25, new String[]{"C#", "JavaScript"});
+
+        // Print original employee details
+        System.out.println("Before update: " + employee);
+
+        // Update the name of the employee with id = 2
+        updateEmployeeName(employee, 2, "Robert");
+
+        // Print the updated employee details
+        System.out.println("After update: " + employee);
+    }
+
+    // Method to update the name of an employee based on ID
+    public static void updateEmployeeName(Employee employee, int id, String newName) {
+        if (employee.getId() == id) {
+            employee.setName(newName);
+        }
+    }
+}
+
+```
+
+## Create a Employee List
+
+Create a employee list and update name of one of the employee based on the id 
+```
+import java.util.ArrayList;
+import java.util.List;
+
+class Employee {
+    private int id;
+    private String name;
+    private int age;
+    private String[] skills;
+
+    // Constructor
+    public Employee(int id, String name, int age, String[] skills) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.skills = skills;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{id=" + id + ", name='" + name + "', age=" + age + ", skills=" + String.join(", ", skills) + "}";
+    }
+}
+
+public class EmployeeList {
+    public static void main(String[] args) {
+        // Create a list of Employee objects
+        List<Employee> employees = new ArrayList<>();
+
+        // Adding employees to the list
+        employees.add(new Employee(1, "Alice", 30, new String[]{"Java", "Python"}));
+        employees.add(new Employee(2, "Bob", 25, new String[]{"C#", "JavaScript"}));
+        employees.add(new Employee(3, "Charlie", 35, new String[]{"PHP", "Ruby"}));
+
+        // Update the name of the employee with id = 2
+        updateEmployeeName(employees, 2, "Robert");
+
+        // Print the updated list of employees
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
+
+    // Method to update the name of an employee based on ID
+    public static void updateEmployeeName(List<Employee> employees, int id, String newName) {
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
+                employee.setName(newName);
+                break; // Exit the loop once the employee is found and updated
+            }
+        }
+    }
+}
+
+```
 
 
