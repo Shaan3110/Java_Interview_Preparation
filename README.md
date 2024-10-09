@@ -10,7 +10,7 @@
 4. In case another class is created you would need an object to access both.
 
 
-# Overloading and polymorphism -
+## Overloading and polymorphism -
 
 The oops concept where you keep all the methods as same name with different data types of parameters or number of parameters or order of parameters .  
   
