@@ -328,4 +328,42 @@ public class EmployeeList {
 
 ```
 
+## String Immutable and toCharArray
 
+To change a string to character array one can use toCharArray. Dry code for the same is -
+
+```
+String str = "Normal String";
+char a[] = str.toCharArray();
+
+```
+
+## Print elements appearing multiple times in a string 
+
+```
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+
+    public static void printDuplicateCharacters(String str) {
+        Map<Character, Integer> charCountMap = new HashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey() + " appears " + entry.getValue() + " times.");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String inputString = "hello world";
+        printDuplicateCharacters(inputString);
+    }
+}
+```
