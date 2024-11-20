@@ -10,7 +10,7 @@
 4. In case another class is created you would need an object to access both.
 
 
-## Overloading and polymorphism -
+# Overloading and polymorphism -
 
 The oops concept where you keep all the methods as same name with different data types of parameters or number of parameters or order of parameters .  
   
@@ -39,7 +39,7 @@ Types:
 
 ## Final and Super
 
-When initialised to a variable it cannot be changed / modified  
+Final - When initialised to a variable it cannot be changed / modified  
   
 Super - If I want to get the get the function of parent class while initialising the object of child class. The function should not be override with the child class method.  
   
@@ -367,3 +367,46 @@ public class DuplicateCharacters {
     }
 }
 ```
+
+## HashMap
+
+It is a collection class in Java that implements the Map interface. It stores key-value pairs, where each key is unique and maps to a single value. Here's an overview of the commonly used functions in a HashMap:
+
+## Basic Operations
+
+-   **put(key, value):** Adds a key-value pair to the map. If the key already exists, the value is updated.
+-   **get(key):** Retrieves the value associated with the specified key. Returns null if the key is not found.
+-   **containsKey(key):** Checks if the map contains the specified key.
+-   **containsValue(value):** Checks if the map contains the specified value.
+-   **remove(key):** Removes the key-value pair associated with the specified key.
+-   **clear():** Removes all elements from the map.
+-   **size():** Returns the number of elements in the map.
+-   **isEmpty():** Checks if the map is empty.
+
+## Additional Operations
+
+-   **entrySet():** Returns a set of all entries in the map.
+-   **keySet():** Returns a set of all keys in the map.
+-   **values():** Returns a collection of all values in the map.
+-   **computeIfAbsent(key, mappingFunction):** If the key is not present, computes a value using the provided mapping function and adds it to the map.
+-   **merge(key, value, remappingFunction):** If the key is not present, adds the key-value pair. If the key is present, applies the remapping function to the old value and the new value.
+
+## Sum of two numbers in a array equal to target
+
+ ```
+ class Solution {  
+	public int[] twoSum(int[] nums, int target) {  
+		Map <Integer,Integer> map = new HashMap<Integer,Integer>();  
+		for(int i=0;i<nums.length;i++)  
+		{  
+			if(map.containsKey(target-nums[i]))  
+			{  
+			return new int[]{map.get(target-nums[i]),i};  
+			}  
+			map.put(nums[i],i);  
+			}  
+		return new int[]{0,0};  
+		}  
+}
+```
+
