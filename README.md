@@ -410,3 +410,31 @@ It is a collection class in Java that implements the Map interface. It stores ke
 }
 ```
 
+## Constructor in Java in case of Inheritence
+
+When there is a parent and child being called by a child object. the constructor of both parent and child are called as java has super() by default in the child class.
+
+If we use a parameterised constructor , we have to pass the super with a parameter otherwise Java will throw a error as default super() will not have any parameter passed.
+
+```
+class Parent {
+    Parent(String name)
+    {
+        System.out.println(name);
+    }
+}
+class Child extends Parent {
+    Child()
+    {   
+        super("Suchintan");
+        System.out.println("Child");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        
+    }
+}
+```
+
